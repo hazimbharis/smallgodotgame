@@ -1,0 +1,2 @@
+# smallgodotgame
+no overscoping allowed

@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0u65h2b5he6m"]
+
+[ext_resource type="Script" path="res://tmp/main.gd" id="1_085uu"]
+[ext_resource type="MeshLibrary" uid="uid://clsumrtkomioj" path="res://tmp/tiles.tres" id="1_f5v4g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5skdx"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_svmev"]
+sky_material = SubResource("ProceduralSkyMaterial_5skdx")
+
+[sub_resource type="Environment" id="Environment_ot6tm"]
+background_mode = 2
+sky = SubResource("Sky_svmev")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_26cpo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w1ru0"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_085uu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ot6tm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_f5v4g")
+data = {
+"cells": PackedInt32Array(1, 65535, 0, 1, 0, 0, 2, 65535, 0, 2, 0, 0, 0, 65534, 0, 1, 65534, 0, 3, 65534, 0, 2, 65534, 0, 65529, 65531, 1, 65524, 32, 1, 14, 11, 1, 12, 65523, 1)
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77001, 2.17145, 1.11316)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.982652, 0.185461, 0, -0.185461, 0.982652, 0.0194776, 1.02563, 2.13962)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_26cpo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_w1ru0")

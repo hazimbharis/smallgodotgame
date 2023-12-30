@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://81immtrfw8kt"]
+
+[ext_resource type="PackedScene" uid="uid://uqle6xrjjap6" path="res://assets/graphics/models/environment/FloorTile1.glb" id="1_qacbj"]
+[ext_resource type="PackedScene" uid="uid://coc0abuq06qpn" path="res://assets/graphics/models/environment/Tree.glb" id="2_4sya1"]
+[ext_resource type="PackedScene" uid="uid://bhqh82d37dv7o" path="res://assets/graphics/models/npc/Llama.glb" id="3_r5hxd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="FloorTile12" parent="." instance=ExtResource("1_qacbj")]
+
+[node name="Tree2" parent="." instance=ExtResource("2_4sya1")]
+
+[node name="Llama" parent="." instance=ExtResource("3_r5hxd")]

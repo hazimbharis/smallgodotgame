@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjtcetsg1jg70"]
 
-[ext_resource type="ArrayMesh" uid="uid://c7a1mffdyort7" path="res://assets/graphics/models/environment/chest_mesh.tres" id="1_8eejv"]
+[ext_resource type="ArrayMesh" uid="uid://cu755xrct8nxv" path="res://assets/graphics/models/environment/chest_mesh.tres" id="1_8eejv"]
 [ext_resource type="Script" path="res://scripts/world/chest.gd" id="1_gd4kf"]
 
 [node name="Chest" type="Node3D"]

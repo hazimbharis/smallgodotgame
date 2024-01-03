@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://8iwhl8veia2v"]
+
+[ext_resource type="PackedScene" uid="uid://dba3btlmv5osb" path="res://assets/graphics/models/environment/BricksTile1.glb" id="1_mdg64"]
+[ext_resource type="PackedScene" uid="uid://cwy0o5wctbquc" path="res://assets/graphics/models/environment/BricksTile2.glb" id="2_7fp34"]
+[ext_resource type="PackedScene" uid="uid://bvlxndta46feg" path="res://assets/graphics/models/environment/BricksTile3.glb" id="3_7nhem"]
+[ext_resource type="PackedScene" uid="uid://drqo81dhf3ver" path="res://assets/graphics/models/environment/BricksTile4.glb" id="4_6chth"]
+[ext_resource type="PackedScene" uid="uid://ccp6c3paiwm7y" path="res://assets/graphics/models/environment/BricksTile5.glb" id="5_0qepv"]
+[ext_resource type="PackedScene" uid="uid://g3g1mjk7piii" path="res://assets/graphics/models/environment/BricksTile6.glb" id="6_f6xnd"]
+[ext_resource type="PackedScene" uid="uid://drrs2kl6cyuvn" path="res://assets/graphics/models/environment/BricksTile7.glb" id="7_ndq00"]
+[ext_resource type="PackedScene" uid="uid://bb7ky1o8sped" path="res://assets/graphics/models/environment/BricksTile8.glb" id="8_alfm5"]
+[ext_resource type="PackedScene" uid="uid://dkyf5ks2m5wu0" path="res://assets/graphics/models/environment/BrickWall4Side.glb" id="9_8fyqa"]
+[ext_resource type="PackedScene" uid="uid://cjtcetsg1jg70" path="res://scenes/world/chest.tscn" id="10_glsqy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BricksTile1" parent="." instance=ExtResource("1_mdg64")]
+
+[node name="BricksTile2" parent="." instance=ExtResource("2_7fp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="BricksTile3" parent="." instance=ExtResource("3_7nhem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="BricksTile4" parent="." instance=ExtResource("4_6chth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="BricksTile5" parent="." instance=ExtResource("5_0qepv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="BricksTile6" parent="." instance=ExtResource("6_f6xnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="BricksTile7" parent="." instance=ExtResource("7_ndq00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="BricksTile8" parent="." instance=ExtResource("8_alfm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+
+[node name="BrickWall4Side" parent="." instance=ExtResource("9_8fyqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Chest" parent="." instance=ExtResource("10_glsqy")]

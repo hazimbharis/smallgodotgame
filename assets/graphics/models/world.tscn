@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://niy2q6wnhs2x"]
+[gd_scene load_steps=3 format=3 uid="uid://dbykrtq5g8rfw"]
 
-[ext_resource type="MeshLibrary" uid="uid://dxmbgcd67s2jc" path="res://tmp/floor_meshlib2.tres" id="1_5benx"]
+[ext_resource type="MeshLibrary" uid="uid://ba5dvbrhsrshr" path="res://tmp/floor_meshlib2.tres" id="1_5benx"]
 [ext_resource type="Script" path="res://assets/graphics/models/world.gd" id="1_mmkxt"]
 
 [node name="World" type="Node" node_paths=PackedStringArray("gridmap")]

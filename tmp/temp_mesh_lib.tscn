@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5w2au0t1hesi"]
+
+[ext_resource type="Texture2D" uid="uid://gcj831pxmayt" path="res://icon.svg" id="2_0l7ya"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lblif"]
+albedo_texture = ExtResource("2_0l7ya")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_txu18"]
+material = SubResource("StandardMaterial3D_lblif")
+
+[node name="TempMeshLib" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_txu18")

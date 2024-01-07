@@ -1,11 +1,14 @@
 extends Node3D
 @onready var camera = $CharacterBody3D/Camera3D
 @onready var player = $CharacterBody3D
+@onready var map = $GridMap
 var rotating = false
 var left = 1;
 var down = 2;
 var right = 3;
 var up = 4;
+
+var attackPath = load("res://tmp/sickassattack.tscn")
 
 # when changing camera, just shift ui keys left-wise or right-wise according to rotation amounts
 # [l,d,r,u]
@@ -21,8 +24,32 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_text_caret_word_left"):
 		rotating = true
 	
+	if event.is_action_pressed("action_attack"):
+		match up:
+			1:
+				var newAttack = attackPath.instantiate()
+				newAttack.set_position(Vector3(player.position.x - 2, player.position.y, player.position.z))
+				newAttack.rotation = player.rotation
+				add_child(newAttack)
+			2:
+				var newAttack = attackPath.instantiate()
+				newAttack.set_position(Vector3(player.position.x, player.position.y, player.position.z + 2))
+				newAttack.rotation = player.rotation
+				add_child(newAttack)
+			3:
+				var newAttack = attackPath.instantiate()
+				newAttack.set_position(Vector3(player.position.x + 2, player.position.y, player.position.z))
+				newAttack.rotation = player.rotation
+				add_child(newAttack)
+			4:
+				var newAttack = attackPath.instantiate()
+				newAttack.set_position(Vector3(player.position.x, player.position.y, player.position.z - 2))
+				newAttack.rotation = player.rotation
+				add_child(newAttack)
+		print(map.local_to_map(player.position))
+		return;
+	
 	if rotating:
-		print(player.rotation)
 		if event.is_action("camera_up"):
 			player.rotation.y += 0
 		elif event.is_action("camera_right"):
@@ -59,6 +86,7 @@ func _input(event: InputEvent) -> void:
 			if right == 5: right = 1;
 			up += 1;
 			if up == 5: up = 1;
+
 	else:
 		if event.is_action("move_left"):
 			match left:

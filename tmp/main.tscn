@@ -48,7 +48,7 @@ data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77001, 2.17145, 1.11316)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.982652, 0.185461, 0, -0.185461, 0.982652, 0.0194776, 1.02563, 2.13962)
+transform = Transform3D(1, 0, 0, 0, 0.727737, 0.685857, 0, -0.685857, 0.727737, 0.0194776, 3.79715, 2.13962)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_26cpo")
